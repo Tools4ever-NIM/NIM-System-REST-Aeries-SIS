@@ -1,0 +1,744 @@
+{
+    "schema": {
+        "options": {},
+        "crud_objects": {
+            "schools": {
+                "operations": {
+                    "schools_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/v3/schools/"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "SchoolCode",
+                "resources": {
+                    "SchoolCode": "string*",
+                    "Name": "string*",
+                    "InactiveStatusCode": "string",
+                    "Address": "string*",
+                    "AddressCity": "string*",
+                    "AddressState": "string*",
+                    "AddressZipCode": "string*",
+                    "AddressZipExt": "string*",
+                    "DoNotReport": "boolean",
+                    "StateCountyID": "string*",
+                    "StateDistrictID": "string*",
+                    "StateSchoolID": "string*",
+                    "LowGradeLevel": "number*",
+                    "HighGradeLevel": "number*",
+                    "Terms": [
+                        {
+                            "TermCode": "string*",
+                            "TermDescription": "string*",
+                            "StartDate": "string*",
+                            "EndDate": "string*"
+                        }
+                    ],
+                    "PrincipalName": "string*",
+                    "PrincipalEmailAddress": "string*",
+                    "AttendancePeriod": "number",
+                    "Tracks": "number*",
+                    "ScheduleType": "string*",
+                    "SessionType": "string*",
+                    "AttendanceType": "string*",
+                    "AttendanceReporting": "string*",
+                    "ScheduleBasis": "string*",
+                    "PhoneNumber": "string*"
+                }
+            },
+            "contacts": {
+                "operations": {
+                    "contacts_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "SchoolCode",
+                            "path": "/api/v5/schools/{iterator}/contacts"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters": {},
+                "key": "StudentID",
+                "resources": {
+                    "StudentID": "number*",
+                    "AdministrativeLockCode": "string",
+                    "EnrolledTheStudentIndicator": "string",
+                    "Birthdate": "string",
+                    "Occupation": "string",
+                    "TuberculosisTestStatusCode": "string",
+                    "TuberculosisTestExpirationDate": "string",
+                    "FingerprintStatusCode": "string",
+                    "FingerprintDate": "string",
+                    "UserCode1": "string",
+                    "UserCode2": "string",
+                    "UserCode3": "string",
+                    "UserCode4": "string",
+                    "UserCode5": "string",
+                    "UserCode6": "string",
+                    "UserCode7": "string",
+                    "UserCode8": "string",
+                    "MiscCode": "string",
+                    "MailTagCode": "string",
+                    "AddressTypeCode": "string",
+                    "AdditionalCommunicationTypeCode1": "string",
+                    "AdditionalCommunicationTypeCode2": "string",
+                    "AdditionalCommunicationTypeCode3": "string",
+                    "AdditionalCommunicationTypeCode4": "string",
+                    "AdditionalCommunicationDetail1": "string",
+                    "AdditionalCommunicationDetail2": "string",
+                    "AdditionalCommunicationDetail3": "string",
+                    "AdditionalCommunicationDetail4": "string",
+                    "AddressVerificationDate": "string",
+                    "RecordAddedDate": "string",
+                    "MilitaryUserFieldCode1": "string",
+                    "MilitaryUserFieldCode2": "string",
+                    "MilitaryUserFieldCode3": "string",
+                    "MilitaryUserFieldCode4": "string",
+                    "MilitaryUserFieldCode5": "string",
+                    "PrimaryContact1Field": "string",
+                    "PrimaryContact2Field": "string",
+                    "PrimaryContact1Description": "string",
+                    "PrimaryContact2Description": "string",
+                    "EducationalRightsHolder": "string",
+                    "AttendanceNotification": "string",
+                    "PrimaryContact": "string",
+                    "SchoolCode": "number*",
+                    "SequenceNumber": "number*",
+                    "MailingName": "string",
+                    "NamePrefix": "string",
+                    "FirstName": "string*",
+                    "LastName": "string*",
+                    "MiddleName": "string*",
+                    "NameSuffix": "string",
+                    "Address": "string",
+                    "AddressCity": "string",
+                    "AddressState": "string",
+                    "AddressZipCode": "string",
+                    "AddressZipExt": "string",
+                    "RelationshipToStudentCode": "string",
+                    "LivesWithStudentIndicator": "string",
+                    "RedFlag": "boolean",
+                    "HomePhone": "string*",
+                    "WorkPhone": "string*",
+                    "WorkPhoneExt": "string",
+                    "CellPhone": "string*",
+                    "Pager": "string",
+                    "EmailAddress": "string*",
+                    "AccessToPortal": "string*",
+                    "ContactOrder": "number*",
+                    "CorrespondanceLanguageCode": "string",
+                    "EmployerName": "string",
+                    "EmployerLocation": "string",
+                    "MilitaryBranchCode": "string",
+                    "MilitaryRankCode": "string",
+                    "MilitarySupervisorName": "string",
+                    "MilitarySupervisorPhone": "string",
+                    "MilitaryStatusCode": "string",
+                    "NotificationPreferenceCode": "string",
+                    "Comments": "string"
+                }
+            },
+            "students": {
+                "operations": {
+                    "students_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "SchoolCode",
+                            "path": "/api/v5/schools/{iterator}/students"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters": {},
+                "key": "PermanentID",
+                "resources": {
+                    "PermanentID": "number*",
+                    "SchoolCode": "number*",
+                    "StudentNumber": "number*",
+                    "StateStudentID": "0099500004",
+                    "LastName": "string*",
+                    "FirstName": "string*",
+                    "MiddleName": "string*",
+                    "LastNameAlias": "string*",
+                    "FirstNameAlias": "string*",
+                    "MiddleNameAlias": "string*",
+                    "Gender": "string*",
+                    "Grade": "number*",
+                    "GradeLevelShortDescription": "string*",
+                    "GradeLevelLongDescription": "string*",
+                    "Birthdate": "string*",
+                    "ParentGuardianName": "string*",
+                    "HomePhone": "string*",
+                    "StudentMobilePhone": "string*",
+                    "MailingAddress": "string*",
+                    "MailingAddressCity": "string*",
+                    "MailingAddressState": "string*",
+                    "MailingAddressZipCode": "string*",
+                    "MailingAddressZipExt": "string*",
+                    "ResidenceAddress": "string*",
+                    "ResidenceAddressCity": "string*",
+                    "ResidenceAddressState": "string*",
+                    "ResidenceAddressZipCode": "string*",
+                    "ResidenceAddressZipExt": "string*",
+                    "AddressVerified": "boolean*",
+                    "EthnicityCode": "string*",
+                    "RaceCode1": "string",
+                    "RaceCode2": "string",
+                    "RaceCode3": "string",
+                    "RaceCode4": "string",
+                    "RaceCode5": "string",
+                    "UserCode1": "string",
+                    "UserCode2": "string",
+                    "UserCode3": "string",
+                    "UserCode4": "string",
+                    "UserCode5": "string",
+                    "UserCode6": "string",
+                    "UserCode7": "string",
+                    "UserCode8": "string",
+                    "UserCode9": "string",
+                    "UserCode10": "string",
+                    "UserCode11": "string",
+                    "UserCode12": "string",
+                    "UserCode13": "string",
+                    "SchoolEnterDate": "string*",
+                    "SchoolLeaveDate": "string*",
+                    "DistrictEnterDate": "string*",
+                    "CounselorNumber": "number",
+                    "Track": "string",
+                    "AttendanceProgramCodePrimary": "string",
+                    "AttendanceProgramCodeAdditional1": "string",
+                    "AttendanceProgramCodeAdditional2": "string",
+                    "LockerNumber": "string",
+                    "LowSchedulingPeriod": "number*",
+                    "HighSchedulingPeriod": "number*",
+                    "InactiveStatusCode": "string",
+                    "FamilyKey": "number*",
+                    "LanguageFluencyCode": "string",
+                    "HomeLanguageCode": "string",
+                    "CorrespondanceLanguageCode": "string",
+                    "ParentEdLevelCode": "string",
+                    "ParentEmailAddress": "string*",
+                    "StudentEmailAddress": "string*",
+                    "NetworkLoginID": "string",
+                    "EarlyWarningPoints": "number",
+                    "HomeRoomTeacherNumber": "string*",
+                    "NotificationPreferenceCode": "string",
+                    "NextSchoolCode": "number*",
+                    "NextGrade": "number*",
+                    "NextGradeLevelShortDescription": "string",
+                    "NextGradeLevelLongDescription": "string*",
+                    "OldPermanentID": "number",
+                    "RecordsReleaseCode": "string"
+                }
+            },
+            "fees": {
+                "operations": {
+                    "fees_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "SchoolCode",
+                            "path": "/api/v5/schools/{iterator}/fees"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters": {},
+                "key": "StudentID",
+                "resources": {
+                    "StudentID": "number*",
+                    "Fees": [{
+                                "FeeCode": "_:string*",
+                                "SequenceNumber": "_:number*",
+                                "AmountCharged":  "_:string*",
+                                "DateCharged": "_:string*",
+                                "AmountPaid": "_:string*",
+                                "DatePaid": "_:string*",
+                                "LetterCount": "_:string*",
+                                "Comment": "_:string*",
+                                "ReceiptNumber": "_:string*",
+                                "SchoolCode": "_:number*"
+                            }]
+                }
+            },
+            "student_classes": {
+                "operations": {
+                    "student_classes_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "SchoolCode",
+                            "path": "/api/v5/schools/{iterator}/classes"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters": {},
+                "key": "SequenceNumber",
+                "resources": {
+                    "StudentID": "number*",
+                    "SchoolCode": "number*",
+                    "SequenceNumber": "number*",
+                    "SectionNumber": "number*",
+                    "CourseID": "string*",
+                    "DateStarted": "string*",
+                    "DateEnded": "string*"
+                }
+            },
+            "courses": {
+                "operations": {
+                    "courses_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/v5/courses"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "ID",
+                "resources": {
+                    "VocationalEducationSubjectAreaCode": "string",
+                    "VocationalEducationCourseLevelCode": "string",
+                    "CourseLevelCode": "string*",
+                    "CourseTypeCode": "string*",
+                    "NextCourse": "string",
+                    "TermSequence": "number*",
+                    "YearSequence": "number*",
+                    "TraditionalGender": "string",
+                    "NCLBCoreCode": "string",
+                    "NCLBCoreArea1Code": "string",
+                    "NCLBCoreArea2Code": "string",
+                    "ContentGroupCode": "string",
+                    "NCESCode": "string",
+                    "CIPCode": "string",
+                    "BoardAdoptionDate": "string",
+                    "LastRevisionDate": "string",
+                    "RevisionTypeCode": "string",
+                    "InactiveDate": "string",
+                    "AcademicWeight": "number*",
+                    "MeetsAlgebraIRequirement": "boolean*",
+                    "AlgebraICreditRequired": "string",
+                    "ServiceIDCode": "string",
+                    "PopulationServedCode": "string",
+                    "ClassTypeCode": "string",
+                    "CourseSequenceCode": "string",
+                    "NonCampusBasedInstructionCode": "string",
+                    "OnRampsDualEnrollmentIndicator": "string",
+                    "IncludeForExtracurricularActivityEligibilityIndicator": "string",
+                    "HoursForCompletion": "string",
+                    "CostOfCourse": "string",
+                    "ContentSubcategoryCode": "string",
+                    "StandardsGradeRangeCode": "string",
+                    "ContentStandardsAlignmentCode": "string",
+                    "CharterNonCoreIndicator": "string",
+                    "AdvancedCourseStateCode": "string",
+                    "CollegeStateCourseCode": "string",
+                    "MiddleSchoolCoreIndicator": "string",
+                    "CorrespondenceLanguageCode1": "string",
+                    "TitleForLanguage1": "string",
+                    "CorrespondenceLanguageCode2": "string",
+                    "TitleForLanguage2": "string",
+                    "CorrespondenceLanguageCode3": "string",
+                    "TitleForLanguage3": "string",
+                    "CorrespondenceLanguageCode4": "string",
+                    "TitleForLanguage4": "string",
+                    "CorrespondenceLanguageCode5": "string",
+                    "TitleForLanguage5": "string",
+                    "CorrespondenceLanguageCode6": "string",
+                    "TitleForLanguage6": "string",
+                    "UserCode1": "string",
+                    "UserCode2": "string",
+                    "UserCode3": "string",
+                    "UserCode4": "string",
+                    "UserCode5": "string",
+                    "UserCode6": "string",
+                    "UserCode7": "string",
+                    "UserCode8": "string",
+                    "ID": "string",
+                    "Title": "string",
+                    "LongDescription": "string",
+                    "Notes": "string",
+                    "ContentDescription": "string",
+                    "NonAcademicOrHonorsCode": "string",
+                    "SubjectArea1Code": "string",
+                    "SubjectArea2Code": "string",
+                    "SubjectArea3Code": "string",
+                    "DepartmentCode": "string",
+                    "StateCourseCode": "string",
+                    "CSFCourseList": "string",
+                    "CollegePrepIndicatorCode": "string",
+                    "CreditDefault": "string",
+                    "CreditMax": "string",
+                    "TermTypeCode": "string",
+                    "LowGrade": "number*",
+                    "HighGrade": "number*",
+                    "CSU_SubjectAreaCode": "string",
+                    "CSU_Rule_CanBeAnElective": "string",
+                    "CSU_Rule_HonorsCode": "string",
+                    "CSU_Rule_ValidationLevelCode": "string",
+                    "UC_SubjectAreaCode": "string",
+                    "UC_Rule_CanBeAnElective": "string",
+                    "UC_Rule_HonorsCode": "string",
+                    "UC_Rule_ValidationLevelCode": "string",
+                    "TeacherAideIndicator": "boolean*",
+                    "PhysicalEducationIndicator": "boolean*",
+                    "InactiveStatusCode": "string",
+                    "PrerequisiteCourse": "string",
+                    "AlternateCourse": "string",
+                    "DefaultMaxStudents": "number",
+                    "NextYearInactiveStatusCode": "string"
+                }
+            },
+            "sections": {
+                "operations": {
+                    "sections_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "SchoolCode",
+                            "path": "/api/v5/schools/{iterator}/sections"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters": {},
+                "key": "SectionNumber",
+                "resources": {
+                    "SchoolCode": "number*",
+                    "SectionNumber": "number*",
+                    "Period": "string*",
+                    "PeriodBlock": "number",
+                    "Semester": "string*",
+                    "ClassCalendar": "string*",
+                    "CourseID": "string*",
+                    "SectionStaffMembers": [{
+                            "StaffID": "_:number*",
+                            "LastName": "_:string*",
+                            "FirstName": "_:string*",
+                            "IsPrimaryTeacher": "_:boolean*",
+                            "StaffRoleCode": "_:string",
+                            "TeacherPositionCode": "_:string",
+                            "AttendancePermission": "_:string",
+                            "GradebookPermissionCode": "_:string",
+                            "GradeReportingAccess": "_:string",
+                            "StudentAccess": "_:string",
+                            "IncludeInStateReporting": "_:string",
+                            "StartDate": "_:string",
+                            "EndDate": "_:string",
+                            "InactiveStatusCode": "_:string"
+                        }],
+                    "Room": "string",
+                    "Credit": "string",
+                    "GenderRestriction": "string",
+                    "LowGrade": "number",
+                    "HighGrade": "number",
+                    "MaxStudents": "number",
+                    "TotalStudents": "number",
+                    "TotalBoys": "number",
+                    "TotalGirls": "number",
+                    "TotalOtherGender": "number",
+                    "InactiveStatusCode": "string",
+                    "ProgramCode": "string",
+                    "HourlyAttendanceProgramCode": "string",
+                    "ExclusionCode": "string",
+                    "CountsForADA": "string",
+                    "MultiTeacherCode": "string",
+                    "SchedulingGroup": "string",
+                    "TeamCourseGroup": "string",
+                    "TeamNumber": "number",
+                    "SemesterGroup": "string",
+                    "Track": "string",
+                    "ClassID": "number",
+                    "EducationServiceCode": "string",
+                    "LanguageOfInstructionCode": "string",
+                    "InstructionalStrategyCode": "string",
+                    "FundingSourceCode": "string",
+                    "CareerTechnicalEducationProviderCode": "string",
+                    "IndependentStudyIndicator": "string",
+                    "DistanceLearningIndicator": "string",
+                    "ItinerantTeacherIndicator": "string",
+                    "UseSupplementalAttendance": "boolean",
+                    "ArticulatedCourseIndicator": "string",
+                    "NonCampusBasedInstructionCode": "string",
+                    "PopulationServedCode": "string",
+                    "ClassTypeCode": "string",
+                    "MonthlyMinutes": "number",
+                    "PreKSchoolTypeCode": "string",
+                    "PreKCurriculaCode": "string",
+                    "IsHighQualityPreKProgram": "boolean",
+                    "InstructionTypeCode": "string",
+                    "ProgramEvaluationTypeCode": "string",
+                    "EducationalEnvironmentCode": "string",
+                    "CareerTechnicalEducationHours": "number",
+                    "ContentSubcategoryCode": "string",
+                    "CharterNonCoreIndicator": "string",
+                    "AdvancedCourseStateCode": "string",
+                    "OnlineInstructionTypeCode": "string",
+                    "MiddleSchoolCoreIndicator": "string",
+                    "NonCredentialedAuthorizationCode": "string",
+                    "HighQualityCareerTechnicalEducationIndicator": "string",
+                    "UserCode1": "string",
+                    "UserCode2": "string",
+                    "UserCode3": "string",
+                    "UserCode4": "string",
+                    "UserCode5": "string",
+                    "UserCode6": "string",
+                    "UserCode7": "string",
+                    "UserCode8": "string"
+                }
+            },
+            "staff": {
+                "operations": {
+                    "staff_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/v5/staff"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {}
+                    }
+                },
+                "parameters": {},
+                "key": "ID",
+                "resources": {
+                    "SchoolAccessPermissions": [
+                        {
+                            "SchoolCode": "_:number*",
+                            "ReadOnlyAccess": "_:boolean*",
+                            "CommunicationGroup": "_:boolean*"
+                        }
+                    ],
+                    "EarlyChildhoodCertificationCode": "string",
+                    "Gender": "string",
+                    "EducationLevelCode": "string",
+                    "EthnicityCode": "string",
+                    "RaceCode1": "string",
+                    "RaceCode2": "string",
+                    "RaceCode3": "string",
+                    "RaceCode4": "string",
+                    "RaceCode5": "string",
+                    "PositionStatusCode": "string",
+                    "TotalYearsOfEduService": "number",
+                    "TotalYearsInThisDistrict": "number",
+                    "PreviousLastName": "string",
+                    "PreviousFirstName": "string",
+                    "PreviousMiddleName": "string",
+                    "NameSuffix": "string*",
+                    "Address": "string",
+                    "AddressCity": "string",
+                    "AddressState": "string",
+                    "AddressZipCode": "string",
+                    "AddressZipExt": "string",
+                    "HomePhone": "string*",
+                    "EmergencyContactName": "string",
+                    "EmergencyContactPhone": "string",
+                    "ID": "number*",
+                    "FirstName": "string*",
+                    "LastName": "string*",
+                    "MiddleName": "string*",
+                    "BirthYear": "number*",
+                    "BirthDate": "string*",
+                    "FullTimePercentage": "number",
+                    "HireDate": "string*",
+                    "LeaveDate": "string*",
+                    "InactiveStatusCode": "string*",
+                    "StateEducatorID": "string*",
+                    "UserName": "string*",
+                    "EmailAddress": "string*",
+                    "PrimaryAeriesSchool": "number*",
+                    "NetworkLoginID": "string*",
+                    "AlternateEmailAddress": "string*",
+                    "HumanResourcesSystemID": "string*",
+                    "CellPhone": "string",
+                    "NotificationPreferenceCode": "string",
+                    "Title": "string*"
+                }
+            },
+            "teachers": {
+                "operations": {
+                    "teachers_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "SchoolCode",
+                            "path": "/api/v5/schools/{iterator}/teachers"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters": {},
+                "key": "TeacherNumber",
+                "resources": {
+                    "UserCode1": "string",
+                    "UserCode2": "string",
+                    "UserCode3": "string",
+                    "UserCode4": "string",
+                    "UserCode5": "string",
+                    "UserCode6": "string",
+                    "UserCode7": "string",
+                    "UserCode8": "string",
+                    "SchoolCode": "number*",
+                    "TeacherNumber": "number*",
+                    "DisplayName": "string*",
+                    "FirstName": "string*",
+                    "LastName": "string*",
+                    "Room": "string",
+                    "EmailAddress": "string*",
+                    "StaffID1": "string*",
+                    "StaffID2": "string*",
+                    "StaffID3": "string*",
+                    "StateCourseCode": "string",
+                    "InactiveStatusCode": "string*",
+                    "HighlyQualifiedStatusCode1": "string",
+                    "HighlyQualifiedStatusCode2": "string",
+                    "HighlyQualifiedStatusCode3": "string",
+                    "NextYearInactiveStatusCode": "string"
+                }
+            },
+            "staff_assignments": {
+                "operations": {
+                    "staff_assignments_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "staff",
+                            "iterator": "ID",
+                            "path": "/api/v5/staff/{iterator}/assignments"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters": {},
+                "key": "ID",
+                "resources": {
+                    "AssignmentType": "string*",
+                    "ID": "number*",
+                    "SequenceNumber": "number*",
+                    "JobClassificationCode": "string*",
+                    "FullTimePercentage": "number*",
+                    "NonClassroomBasedJobAssignmentCode1": "string",
+                    "NonClassroomBasedJobAssignmentCode2": "string",
+                    "NonClassroomBasedJobAssignmentCode3": "string",
+                    "NonClassroomBasedJobAssignmentCode4": "string",
+                    "NonClassroomBasedJobAssignmentCode5": "string",
+                    "NonClassroomBasedJobAssignmentCode6": "string",
+                    "NonClassroomBasedJobAssignmentCode7": "string",
+                    "SchoolCode": "number*",
+                    "StartDate": "string*",
+                    "EndDate": "string*"
+                }
+            },
+            "student_enrollments": {
+                "operations": {
+                    "students_enrollments_get": {
+                        "method": "get",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/v5/enrollment/0"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters": {},
+                "key": "PermanentID",
+                "resources": {
+                    "StudentID": "number*",
+                    "InterIntraDistrictStateCode": "string",
+                    "NonpublicSchoolStateCode": "stiring",
+                    "NextSchoolCode": "number",
+                    "ReportingSchoolCode": "number",
+                    "SchoolCode": "number*",
+                    "StudentNumber": "number*",
+                    "AcademicYear": "string*",
+                    "Track": "string",
+                    "AttendanceProgramCode": "string",
+                    "AttendanceProgramCodeAdditional1": "string",
+                    "AttendanceProgramCodeAdditional2": "string",
+                    "Grade": "number*",
+                    "ElementaryTeacherNumber": "number",
+                    "ElementaryTeacherName": "string",
+                    "EnterDate": "string*",
+                    "LeaveDate": "string*",
+                    "ExitReasonCode": "string*",
+                    "InterIntraDistrictTransferCode": "string"
+                }
+            }
+        }
+    },
+    "rest": {
+        "config": {
+            "baseUrl": "https://{tenant_id}",
+            "get": {
+                "maxPageCount": 5,
+                "query_parameters": {}
+            },
+            "authentication": "aeries",
+            "call_handling": "generic",
+            "test_connection": {
+                "url": "/api/v5/systeminfo"
+            },
+            "accept": "application/json",
+            "headers": {
+                "AERIES-CERT": "{client_secret}"
+            }
+        }
+    },
+    "connection": {
+        "items": []
+    }
+}
