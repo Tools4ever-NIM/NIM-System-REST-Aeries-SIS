@@ -169,9 +169,9 @@
                     }
                 },
                 "parameters": {},
-                "key": "PermanentID",
+                "key": "StudentID",
                 "resources": {
-                    "PermanentID": "number*",
+                    "StudentID": "number*",
                     "SchoolCode": "number*",
                     "StudentNumber": "number*",
                     "StateStudentID": "0099500004",
@@ -388,7 +388,7 @@
                     "UserCode6": "string",
                     "UserCode7": "string",
                     "UserCode8": "string",
-                    "ID": "string",
+                    "ID": "string*",
                     "Title": "string",
                     "LongDescription": "string",
                     "Notes": "string",
@@ -695,7 +695,7 @@
                     }
                 },
                 "parameters": {},
-                "key": "PermanentID",
+                "key": "StudentID",
                 "resources": {
                     "StudentID": "number*",
                     "InterIntraDistrictStateCode": "string",
