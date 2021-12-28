@@ -25,6 +25,10 @@ https://support.aeries.com/support/solutions/articles/14000077926-aeries-api-ful
     - Schools
     - Terms
     - Users
+  - Class Schedules
+    - History
+  - Enrollment History
+  - Staff Data
 
 
 # NIM Docs
