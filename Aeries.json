@@ -166,7 +166,30 @@
                         },
                         "query_parameters": {},
                         "maxSessionCount": 20
-                    }
+                    },
+                    "students_updateEmail": {
+                        "method": "post",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/v5/UpdateSchoolSupplemental/{SchoolCode}/{StudentID}"
+                        },
+                        "query_parameters": {
+                        },
+                        "body":{
+                                  "Columns": {
+                                        "ColumnCode": "STE",
+                                        "NewValue": "{StudentEmailAddress}"
+
+                                  }
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "SchoolCode",
+                            "StudentID",
+                            "StudentEmailAddress"
+                        ]
+                      }
                 },
                 "parameters": {},
                 "key": "StudentID",
