@@ -894,7 +894,7 @@
                 "resources": {
                     "StudentID": "number*",
                     "InterIntraDistrictStateCode": "string",
-                    "NonpublicSchoolStateCode": "stiring",
+                    "NonpublicSchoolStateCode": "string",
                     "NextSchoolCode": "number",
                     "ReportingSchoolCode": "number",
                     "SchoolCode": "number*",
@@ -927,6 +927,7 @@
             "test_connection": {
                 "url": "/api/v5/systeminfo"
             },
+            "socket_timeout": 3600000,
             "accept": "application/json",
             "headers": {
                 "AERIES-CERT": "{client_secret}"
