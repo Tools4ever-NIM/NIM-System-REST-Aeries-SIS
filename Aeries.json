@@ -4,7 +4,7 @@
         "crud_objects": {
             "schools": {
                 "operations": {
-                    "schools_get": {
+                    "schoolsList": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
@@ -55,7 +55,7 @@
             },
             "contacts": {
                 "operations": {
-                    "contacts_get": {
+                    "contactsList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -153,7 +153,7 @@
             },
             "students": {
                 "operations": {
-                    "students_get": {
+                    "studentsList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -167,6 +167,31 @@
                         "query_parameters": {},
                         "maxSessionCount": 20
                     },
+                    "studentUpdate": {
+                        "method": "post",
+                        "call": {
+                          "mode": "normal",
+                          "path": "/api/v5/UpdateStudent/{StudentID}"
+                        },
+                        "query_parameters": {},
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "MailingAddress",
+                            "MailingAddressCity",
+                            "MailingAddressState",
+                            "MailingAddressZipCode",
+                            "MailingAddressZipExt",
+                            "ResidenceAddress",
+                            "ResidenceAddressCity",
+                            "ResidenceAddressState",
+                            "ResidenceAddressZipCode",
+                            "ResidenceAddressZipExt"
+                        ],
+                        "resource_mandatory": [
+                            "StudentID"
+                        ]
+                    },
                     "students_updateEmail": {
                         "method": "post",
                         "call": {
@@ -179,7 +204,6 @@
                                   "Columns": {
                                         "ColumnCode": "STE",
                                         "NewValue": "{StudentEmailAddress}"
-
                                   }
                         },
                         "semantics": "update",
@@ -189,7 +213,31 @@
                             "StudentID",
                             "StudentEmailAddress"
                         ]
-                      }
+                    },
+                    "studentUpdateSchoolSupplemental": {
+                        "method": "post",
+                        "call": {
+                          "mode": "normal",
+                          "path": "/api/v5/UpdateSchoolSuppelmental/{SchoolCode}/{StudentNumber}"
+                        },
+                        "query_parameters": {},
+                        "body": {
+                            "_nim_merge_attributes_": false,
+                            "Columns": {
+                                "ColumnCode": "{ColumnCode}",
+                                "NewValue": "{NewValue}"
+                            }
+                        },
+                        "resource_allowance_default": "prohibited",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "SchoolCode",
+                            "StudentNumber",
+                            "ColumnCode",
+                            "NewValue"
+                        ]
+                    }
                 },
                 "parameters": {},
                 "key": "StudentID",
@@ -197,7 +245,7 @@
                     "StudentID": "number*",
                     "SchoolCode": "number*",
                     "StudentNumber": "number*",
-                    "StateStudentID": "0099500004",
+                    "StateStudentID": "string*",
                     "LastName": "string*",
                     "FirstName": "string*",
                     "MiddleName": "string*",
@@ -270,12 +318,54 @@
                     "NextGradeLevelShortDescription": "string",
                     "NextGradeLevelLongDescription": "string*",
                     "OldPermanentID": "number",
-                    "RecordsReleaseCode": "string"
+                    "RecordsReleaseCode": "string",
+                    "ColumnCode": "string",
+                    "NewValue": "string"
+                }
+            },
+            "school_groups": {
+                "operations": {
+                    "school_groupsList": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "SchoolCode",
+                            "path": "/api/v5/schools/{iterator}/StudentGroups",
+                            "base": {
+                                "SchoolCode": "{iterator}"
+                            }
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 20
+                    }
+                },
+                "parameters": {},
+                "key": "GroupID",
+                "resources": {
+                    "Description": "string*",
+                    "ExpirationDate": "date*",
+                    "GroupId": "number*",
+                    "IsCommunicationGroup": "boolean*",
+                    "Name": "string*",
+                    "Staff": [
+                        {
+                            "StaffId": "string*"
+                        }
+                    ],
+                    "Students": [
+                                    {
+                                        "StudentId": "string*"
+                                    }
+                                ]
                 }
             },
             "fees": {
                 "operations": {
-                    "fees_get": {
+                    "feesList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -310,7 +400,7 @@
             },
             "student_classes": {
                 "operations": {
-                    "student_classes_get": {
+                    "student_classesList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -339,7 +429,7 @@
             },
             "courses": {
                 "operations": {
-                    "courses_get": {
+                    "coursesList": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
@@ -448,7 +538,7 @@
             },
             "sections": {
                 "operations": {
-                    "sections_get": {
+                    "sectionsList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -551,7 +641,7 @@
             },
             "staff": {
                 "operations": {
-                    "staff_get": {
+                    "staffList": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
@@ -561,7 +651,39 @@
                             "output_field": null
                         },
                         "query_parameters": {}
-                    }
+                    },
+                    "staffCreate": {
+                        "method": "post",
+                        "call": {
+                          "mode": "normal",
+                          "path": "/api/v5/staff"
+                        },
+                        "query_parameters": {},
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                            "ID"
+                        ],
+                        "resource_mandatory": [
+                            "FirstName",
+                            "LastName"
+                        ]
+                      },
+                    "staffUpdate": {
+                        "method": "put",
+                        "call": {
+                          "mode": "normal",
+                          "path": "/api/v5/staff/{ID}"
+                        },
+                        "query_parameters": {},
+                        "semantics": "update",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "ID"
+                        ]
+                      }
                 },
                 "parameters": {},
                 "key": "ID",
@@ -621,7 +743,7 @@
             },
             "teachers": {
                 "operations": {
-                    "teachers_get": {
+                    "teachersList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -667,7 +789,7 @@
             },
             "staff_assignments": {
                 "operations": {
-                    "staff_assignments_get": {
+                    "staff_assignmentsList": {
                         "method": "get",
                         "call": {
                             "mode": "iteration",
@@ -680,7 +802,57 @@
                         },
                         "query_parameters": {},
                         "maxSessionCount": 20
-                    }
+                    },
+                    "staff_assignmentsCreate": {
+                        "method": "post",
+                        "call": {
+                          "mode": "normal",
+                          "path": "/api/v5/staff/{ID}/assignments"
+                        },
+                        "query_parameters": {},
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "AssignmentType",
+                            "ID"
+                        ]
+                      },
+                      "staff_assignmentsUpdate": {
+                        "method": "put",
+                        "call": {
+                          "mode": "normal",
+                          "path": "/api/v5/staff/{ID}/assignments/{AssignmentType}/{SequenceNumber}"
+                        },
+                        "query_parameters": {},
+                        "semantics": "create",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "ID",
+                            "SequenceNumber",
+                            "AssignmentType"
+                        ]
+                      },
+                      "staff_assignmentsDelete": {
+                        "method": "delete",
+                        "call": {
+                          "mode": "normal",
+                          "path": "/api/v5/staff/{ID}/assignments/{AssignmentType}/{SequenceNumber}"
+                        },
+                        "query_parameters": {},
+                        "semantics": "delete",
+                        "resource_allowance_default": "optional",
+                        "resource_prohibited": [
+                        ],
+                        "resource_mandatory": [
+                            "ID",
+                            "SequenceNumber",
+                            "AssignmentType"
+                        ]
+                      }
                 },
                 "parameters": {},
                 "key": "ID",
@@ -704,7 +876,7 @@
             },
             "student_enrollments": {
                 "operations": {
-                    "students_enrollments_get": {
+                    "students_enrollmentsList": {
                         "method": "get",
                         "call": {
                             "mode": "normal",
