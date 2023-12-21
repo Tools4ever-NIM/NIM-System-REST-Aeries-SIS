@@ -1,35 +1,31 @@
-# NIM-Conn-System-REST-Aeries-SIS
-NIM Connector for Aeries SIS
+# Aeries SIS
 
-<p align="center">
-  <img src="Assets/logo.png">
-</p>
+<img src="https://github.com/Tools4ever-NIM/NIM-System-REST-Aeries-SIS/assets/24281600/4b2979b8-51d0-4b57-a669-b61e17248749" width="256px" />
 
-# API Documentation
-https://support.aeries.com/support/solutions/articles/14000077926-aeries-api-full-documentation
 
-# Setup Aeries API Set up
+## Data Tables
+- Contacts
+- Courses
+- Fees
+- Schools
+- School Groups
+- Sections
+- Staff
+- Staff Assignments
+- Students
+- Student Classes
+- Student Enrollments
+- Teachers
 
-- Click Add to create a record for a 3rd party product.
-- Enter "NIM" for Product Name, Status should be Active
-- Take note of the certificate key
-- Setup permissions
-  - Student Data
-    - Student Data
-  - Scheduling
-    - Teacher Data
-    - Master Schedule
-    - Course Data
-    - Classes
-  - School Information
-    - Schools
-    - Terms
-    - Users
-  - Class Schedules
-    - History
-  - Enrollment History
-  - Staff Data
 
+## Actions
+- Staff
+    - Create/Update
+- Staff Assignments
+    - Create/Update/Delete
+- Students
+    - Update
+    - Update Email
 
 # NIM Docs
 The official NIM documentation can be found at: https://docs.nimsuite.com
