@@ -661,12 +661,10 @@
                         "query_parameters": {},
                         "semantics": "create",
                         "resource_allowance_default": "optional",
-                        "resource_prohibited": [
-                            "ID"
-                        ],
                         "resource_mandatory": [
                             "FirstName",
-                            "LastName"
+                            "LastName",
+							"ID"
                         ]
                       },
                     "staffUpdate": {
