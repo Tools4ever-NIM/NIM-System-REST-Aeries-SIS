@@ -323,6 +323,36 @@
                     "NewValue": "string"
                 }
             },
+            "student_supplemental": {
+                "operations": {
+                    "student_supplementalList": {
+                        "method": "get",
+                        "call": {
+                            "mode": "iteration",
+                            "table": "schools",
+                            "iterator": "SchoolCode",
+                            "path": "/api/v5/schools/{iterator}/schoolsupplemental"
+                        },
+                        "processing_options": {
+                            "output_field": null
+                        },
+                        "query_parameters": {},
+                        "maxSessionCount": 1
+                    }
+                },
+                "parameters": {},
+                "key": "StudentID",
+                "resources": {
+                    "StudentID": "string*",
+                    "SchoolCode": "string*",
+                    "Columns": [{
+                        "ColumnCode": "string*",
+                        "ColumnDescription": "string*",
+                        "Value": "string*",
+                        "ColumnType": "string*"
+                    }]
+                }
+            },
             "school_groups": {
                 "operations": {
                     "school_groupsList": {
@@ -926,6 +956,38 @@
                 "url": "/api/v5/systeminfo"
             },
             "socket_timeout": 3600000,
+            "retry": [
+            {
+                "type": "statusCode",
+                "statusCode": 429,
+                "retry": {
+                    "type": "simple",
+                    "maxCount": 12,
+                    "waitTime": 5
+                }
+            },
+            {
+                "type": "statusCode",
+                "statusCode": 401,
+                "retry": {
+                    "type": "simple",
+                    "maxCount": 6,
+                    "waitTime": 5
+                }
+            },
+            {
+                "type": "statusCode",
+                "statusCode": 500,
+                "retry": {
+                    "type": "simple",
+                    "maxCount": 12,
+                    "waitTime": 5
+                }
+            },
+            {
+                "type": "connectionError"
+            }
+        ],
             "accept": "application/json",
             "headers": {
                 "AERIES-CERT": "{client_secret}"
