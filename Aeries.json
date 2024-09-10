@@ -576,6 +576,7 @@
                             "iterator": "SchoolCode",
                             "path": "/api/v5/schools/{iterator}/sections"
                         },
+                        "put_hash_in_child_tables": "nim_hash",
                         "processing_options": {
                             "output_field": null
                         },
