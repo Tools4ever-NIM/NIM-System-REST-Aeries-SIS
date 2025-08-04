@@ -196,21 +196,21 @@
                         "method": "post",
                         "call": {
                             "mode": "normal",
-                            "path": "/api/v5/UpdateSchoolSupplemental/{SchoolCode}/{StudentID}"
+                            "path": "/api/v5/UpdateSchoolSupplemental/{SchoolCode}/{StudentNumber}"
                         },
                         "query_parameters": {
                         },
                         "body":{
-                                  "Columns": {
+                                  "_nim_merge_attributes_": false,
+								  "Columns": {
                                         "ColumnCode": "STE",
                                         "NewValue": "{StudentEmailAddress}"
                                   }
                         },
-                        "semantics": "update",
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
                             "SchoolCode",
-                            "StudentID",
+							"StudentNumber",
                             "StudentEmailAddress"
                         ]
                     },
@@ -218,7 +218,7 @@
                         "method": "post",
                         "call": {
                           "mode": "normal",
-                          "path": "/api/v5/UpdateSchoolSuppelmental/{SchoolCode}/{StudentNumber}"
+                          "path": "/api/v5/UpdateSchoolSupplemental/{SchoolCode}/{StudentNumber}"
                         },
                         "query_parameters": {},
                         "body": {
