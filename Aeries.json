@@ -202,10 +202,10 @@
                         },
                         "body":{
                                   "_nim_merge_attributes_": false,
-								  "Columns": {
+								  "Columns": [{
                                         "ColumnCode": "STE",
                                         "NewValue": "{StudentEmailAddress}"
-                                  }
+                                  }]
                         },
                         "resource_allowance_default": "prohibited",
                         "resource_mandatory": [
@@ -223,10 +223,10 @@
                         "query_parameters": {},
                         "body": {
                             "_nim_merge_attributes_": false,
-                            "Columns": {
+                            "Columns": [{
                                 "ColumnCode": "{ColumnCode}",
                                 "NewValue": "{NewValue}"
-                            }
+                            }]
                         },
                         "resource_allowance_default": "prohibited",
                         "resource_prohibited": [
