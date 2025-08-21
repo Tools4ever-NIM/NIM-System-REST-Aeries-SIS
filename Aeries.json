@@ -192,28 +192,6 @@
                             "StudentID"
                         ]
                     },
-                    "students_updateEmail": {
-                        "method": "post",
-                        "call": {
-                            "mode": "normal",
-                            "path": "/api/v5/UpdateSchoolSupplemental/{SchoolCode}/{StudentNumber}"
-                        },
-                        "query_parameters": {
-                        },
-                        "body":{
-                                  "_nim_merge_attributes_": false,
-								  "Columns": [{
-                                        "ColumnCode": "STE",
-                                        "NewValue": "{StudentEmailAddress}"
-                                  }]
-                        },
-                        "resource_allowance_default": "prohibited",
-                        "resource_mandatory": [
-                            "SchoolCode",
-							"StudentNumber",
-                            "StudentEmailAddress"
-                        ]
-                    },
                     "studentUpdateSchoolSupplemental": {
                         "method": "post",
                         "call": {
