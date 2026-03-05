@@ -15,6 +15,7 @@
 - Students
 - Student Classes
 - Student Enrollments
+- Student Programs
 - Teachers
 
 
