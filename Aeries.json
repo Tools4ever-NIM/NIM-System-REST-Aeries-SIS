@@ -822,14 +822,15 @@
                         "call": {
                             "mode": "iteration",
                             "table": "students",
-                            "iterator": "StudentID",
+                            "iterator": "StudentNumber",
                             "iterator_columns": [
-                                "SchoolCode"
+                                "SchoolCode",
+                                "StudentID"
                             ],
-                            "path": "/api/v5/schools/{SchoolCode}/students/{iterator}/programs",
+                            "path": "/api/v5/schools/{SchoolCode}/students/{StudentID}/programs",
                             "base": {
                                 "SchoolCode": "{SchoolCode}",
-                                "Key": "{SchoolCode}.{iterator}"
+                                "Key": "{SchoolCode}.{StudentID}"
                             }
                         },
                         "processing_options": {
