@@ -666,6 +666,23 @@
                             "ColumnCode",
                             "NewValue"
                         ]
+                    },
+                    "studentUpdateEmail": {
+                        "method": "put",
+                        "call": {
+                            "mode": "normal",
+                            "path": "/api/v5/students/{StudentID}"
+                        },
+                        "body": {
+                            "_nim_merge_attributes_": false,
+                            "StudentEmail": "{StudentEmailAddress}"
+                        },
+                        "semantics": "update",
+                        "resource_allowance_default": "prohibited",
+                        "resource_mandatory": [
+                            "StudentID",
+                            "StudentEmailAddress"
+                        ]
                     }
                 },
                 "key": "StudentID",
