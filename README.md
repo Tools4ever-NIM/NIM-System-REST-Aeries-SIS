@@ -1,5 +1,7 @@
 # Aeries SIS
 
+Read the [Aeries SIS integration documentation](https://docs.nimsuite.com/en/integrations/aeries-sis) for connector details and related guides.
+
 <img src="https://github.com/Tools4ever-NIM/NIM-System-REST-Aeries-SIS/assets/24281600/4b2979b8-51d0-4b57-a669-b61e17248749" width="256px" />
 
 
